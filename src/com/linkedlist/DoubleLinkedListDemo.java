@@ -32,16 +32,27 @@ class DoubleLinkedList{
     	}
     }
     
+    //头部添加节点
+    public void addListHead(HeroDoubleNode hero){
+    	HeroDoubleNode temp = getHead();
+    	HeroDoubleNode newTemp = hero;
+    	if(temp.next == null){
+			temp.next = hero;
+		}else {
+			newTemp.next = temp.next;
+			temp.next = newTemp;
+		}
+    }
+    
     //遍历双向链表
     public void listHeroDoubleNode(){
         HeroDoubleNode temp = getHead();
         while(true){
             if(temp.next == null){
-                System.out.println(temp);
                 break;
             }
             if(temp.next != null){
-                System.out.println(temp);
+                System.out.println(temp.next);
                 temp = temp.next;
             }
         }
